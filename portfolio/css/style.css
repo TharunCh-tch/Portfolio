@@ -1,0 +1,467 @@
+/* General Styles */
+body {
+  text-transform: uppercase; 
+  font-family: 'Share Tech Mono', monospace; /* Matrix-style font */
+  background-color: #000000; /* Black background */
+  color: #00ff00; /* Neon Green */
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4 {
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00; /* Neon Green */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  text-align: center;
+  margin: 20px 0;
+}
+a {
+  text-decoration: none;
+  color: #00ff00; /* Neon Green */
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #33ff33; /* Lighter Green */
+}
+/*-------------------end of body-----------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* Navigation */
+.navbar, .navbar-light {
+  background-color: #000000 !important; /* Black Background */
+  box-shadow: 0px 0px 5px rgba(0, 255, 0, 0.3); /* Subtle Glow */
+  position: relative; /* Ensure pseudo-element positions correctly */
+}
+.navbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dimming Overlay */
+  z-index: 1; /* Place it above the background but below content */
+  pointer-events: none; /* Allow clicks to pass through the overlay */
+}
+.navbar:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Reduced height for a narrower border */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='8' viewBox='0 0 50 8'><path d='M0 4 L4 0 L46 0 L50 4 L46 8 L4 8 Z' fill='rgba(0, 255, 0, 0.5)'/><rect x='46' y='0' width='4' height='8' fill='rgba(0, 0, 0, 1)'/></svg>");
+  background-repeat: repeat-x; /* Repeat the pattern horizontally */
+  background-size: 40px 20px; /* Includes the segment size and the gap */
+}
+/* Navbar Brand */
+.navbar-brand {
+  font-size: 1.8rem; /* Larger text size for better visibility */
+  font-weight: bold;
+  text-transform: uppercase; /* Convert to uppercase */
+  color: #00ff00; /* Neon Green */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glow Effect */
+  z-index: 3; /* Ensure it appears above the dimming overlay */
+}
+.navbar-brand:hover {
+  color: #33ff33; /* Brighter Green on hover */
+  text-shadow: 0 0 15px #33ff33, 0 0 30px #33ff33; /* Enhanced Glow on hover */
+}
+/* Navbar Links */
+.navbar-light .navbar-nav .nav-link {
+  color: #00ff00; /* Bright Neon Green */
+  font-size: 1.4rem; /* Larger font size for visibility */
+  font-family: 'Share Tech Mono', monospace; /* Matrix-style font */
+  text-transform: uppercase; /* Uppercase for consistency */
+  text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00; /* Stronger glow effect */
+  font-weight: 700; /* Increased font weight for better visibility */
+  z-index: 3; /* Ensure it appears above the dimming overlay */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions */
+  letter-spacing: 2px; /* Spacing between letters for clarity */
+}
+/* Hover Effects */
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #33ff33; /* Lighter Neon Green on hover */
+  text-shadow: 0 0 20px #33ff33, 0 0 40px #33ff33; /* Enhanced glow on hover */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none;
+  z-index: 3; /* Ensure it appears above the dimming overlay */
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%288, 217, 214, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/*--------------end of navigation bar----------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+/* Scroll Progress Bar */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Height of the progress bar */
+  background: rgba(0, 0, 0, 0.2); /* Background for the bar track */
+  z-index: 1000; /* Keep it on top of everything */
+}
+#scrollBar {
+  width: 0%; /* Progress starts at 0% */
+  height: 100%;
+  background: #00ff00; /* Neon Green */
+  transition: width 0.1s ease-in-out;
+}
+/*-----------------end of scroll bar-------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* Intro Section */
+#home {
+  text-transform: uppercase; 
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-color: #000000; /* Pure Black */
+}
+#home .overlay-itro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.69); /* Darker Transparent Overlay */
+  z-index: 1;
+}
+#home .intro-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+#home .row {
+  height: 100%; /* Ensures the row takes full height */
+}
+#home .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+}
+#home .text-left {
+  text-align: left; /* Aligns text to the left */
+}
+#home .intro-title {
+  text-transform: uppercase; 
+  color: #00ff00; /* Neon Green */
+  font-family: 'Share Tech Mono', monospace; /* Matrix-like font */
+  font-size: 3.5rem;/*welcome to tharuns world*/
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Glow Effect */
+  margin-bottom: 20px;
+}
+#home .typed {
+  text-transform: uppercase; 
+  color: #00ff00; /* Neon Green */
+  font-family: 'Share Tech Mono', monospace; /* Matrix-like font */
+  font-size: 1.5rem;/* array of text */
+  font-weight: 400;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; /* Subtle Glow Effect */
+}
+
+/*-------------------end of intro*------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/* About and Skills Section */
+#about-skills {
+  position: relative;
+  background-color: #000; /* Black background */
+  color: #00ff00; /* Neon green text */
+  overflow: hidden; /* Hide overflowing hacker text */
+  padding: 50px 0;
+}
+
+/* Hacker Text Background */
+.hacker-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; /* Bring to the topmost layer */
+  pointer-events: none; /* Prevent interference with other elements */
+  background: transparent; /* Ensure no additional background blocks it */
+}
+
+#hacker-dynamic-text {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 200%; /* Double height for smooth scrolling */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 16px;
+  color: #00ff00; /* Bright neon green */
+  line-height: 20px; /* Adjust line height for better spacing */
+  animation: scrollHackerText 2s linear infinite; /* Faster scrolling */
+  white-space: normal; /* Prevent text wrapping */
+  overflow: break-word; /* Break long words */
+  z-index: 1000; /* Ensure it's above everything */
+  opacity: 0.3;/* Fully visible */
+}
+
+/* Animation for scrolling hacker text */
+@keyframes scrollHackerText {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* Content Layer */
+.content-layer {
+  position: relative;
+  z-index: 1; /* Push content below hacker text */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for clarity */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon glow */
+}
+
+/* Two Columns */
+#about-skills .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#about-skills .about-column,
+#about-skills .skills-column {
+  width: 48%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6); /* Glass panel effect */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about-skills .about-column,
+  #about-skills .skills-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/*-------------------------------------------------------------------*/
+/*--------------------------------------------------------------------*/
+/* Projects Section */
+#projects {
+  text-transform: uppercase; 
+  padding: 60px 0;
+  background: #000000; /* Black */
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ff00; /* Neon Green */
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+#projects h3 {
+  text-transform: uppercase; 
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #00ff00; /* Neon Green */
+}
+
+
+#projects h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #76c7c0; /* Soft Cyan */
+}
+
+#projects p {
+  font-size: 1rem;
+  color: #bdbdbd; /* Medium Grey */
+  margin: 5px 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Projects Section */
+.portfolio-mf {
+  margin-top: 50px;
+}
+
+.project-container {
+  position: relative;
+  margin: 20px 0; /* Add spacing between projects */
+  text-align: center;
+}
+
+.project-container h3 {
+  font-size: 1.5rem;
+  color: #00ff00; /* Neon Green */
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+/* Update the Glass Panel */
+.glass-panel {
+  position: absolute; /* Position relative to the parent container */
+  top: 100%; /* Start just below the project name */
+  left: 0; /* Align with the left edge of the project container */
+  width: 100%; /* Match the width of the project container */
+  padding: 15px; /* Add padding for content */
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.3); /* Neon glow */
+  border-radius: 5px; /* Slightly rounded corners */
+  color: #00ff00; /* Neon Green */
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95); /* Initial position and slight scaling */
+  transition: all 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Expand the Glass Panel on Hover */
+.project-container:hover .glass-panel {
+  opacity: 1;
+  transform: translateY(0) scale(5); /* Expand smoothly within the same borders */
+}
+
+
+.project-container:hover .glass-panel {
+  transform: scale(1.05); /* Slight scaling on hover */
+  transition: transform 0.3s ease;
+}
+
+
+
+
+
+/* Experience Section */
+#experience {
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  position: relative;
+}
+
+#experience .jarvis-title {
+  font-size: 2.5rem;
+  color: #00ff00; /* Neon Green */
+  text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.jarvis-panel {
+  background: rgba(0, 0, 0, 0.6); /* Glass effect */
+  border: 2px solid rgba(0, 255, 0, 0.5); /* Neon border */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.jarvis-panel:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; /* Neon glow effect */
+}
+
+.jarvis-job-title {
+  font-size: 1.8rem;
+  color: #00ff00; /* Neon Green */
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.jarvis-company,
+.jarvis-dates {
+  font-size: 1.2rem;
+  color: #76c7c0; /* Cyan */
+  text-shadow: 0 0 5px #76c7c0;
+}
+
+.jarvis-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.jarvis-list li {
+  color: #bdbdbd; /* Light Grey */
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+#experience .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hover animations */
+.jarvis-panel:hover .jarvis-job-title,
+.jarvis-panel:hover .jarvis-company,
+.jarvis-panel:hover .jarvis-dates {
+  color: #33ff33; /* Lighter green */
+  text-shadow: 0 0 15px #33ff33, 0 0 30px #33ff33;
+}
+
+
+/* Footer */
+footer {
+  background: #000000; /* Black */
+  color: #00ff00; /* Neon Green */
+  padding: 15px 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* AOS Animations */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(20px);
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about .row {
+    flex-direction: column;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  #home .intro-title {
+    font-size: 2.5rem;
+  }
+
+  #projects .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
